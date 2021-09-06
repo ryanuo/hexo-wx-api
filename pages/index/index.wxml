@@ -4,13 +4,10 @@
  * @Date: 2021-09-04 16:42:05
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-09-05 16:48:16
+ * @LastEditTime: 2021-09-06 22:04:39
  * @LastEditors: Harry
 -->
 
-<!-- 
-<import src="../../templates/common-list.wxml" />
-<import src="../../templates/copyright.wxml" /> -->
 <import src="../../template/loading.wxml" />
 <wxs src="../../template/dates.wxs" module="tools"></wxs>
 <!-- 首次进入引导添加到“我的小程序” -->
@@ -18,18 +15,6 @@
 	<view>点击加入我的小程序 ↑</view>
 	<text>了解"{{webSiteName}}"最新文章</text>
 </view>
-<!-- <view>
-	<form catchsubmit="formSubmit" catchreset="formReset" id="search-form">
-		<view class="search-box">
-			<input value="" id="search-input" name="input" confirm-type="search" class="search-input" placeholder="亲！这里搜索课程哟"
-			 bindconfirm="formSubmit"></input>
-			<button class="search-button" form-type="submit" size="mini" plain="true">
-				<icon type="search" color="#959595" size="16" />
-			</button>
-		</view>
-	</form>
-</view> -->
-
 <view>
 	<!-- 轮播图 -->
 	<view style="display:{{displaySwiper}}">
@@ -145,5 +130,3 @@
 
 </view>
 
-
-<!-- 星尘 -->
