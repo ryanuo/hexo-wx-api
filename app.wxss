@@ -1,0 +1,75 @@
+/* 用比较笨的方法，将需要初始化的标签加进来 */
+
+@import '/config/animate.wxss';
+page, view, text, swiper, swiper-item, image, navigator {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+image {
+	width: 100%;
+}
+
+page {
+	/* 定义主题颜色 */
+	--themeColor: #48b378;
+	--articleThemeColor: #48b378;
+	--themeLightColor: #fff;
+	--themeDarkColor: #000;
+	--titleColor: #333;
+	--SubtitleColor: #b3b9be;
+	--firstwordColor: #118fff;
+	--shadowColor: #ccc;
+	font-size: 32rpx;
+}
+
+/* 进度条 */
+
+.sk-three-bounce {
+	margin: 20rpx auto;
+	width: 200rpx;
+	text-align: center;
+}
+
+.sk-three-bounce .sk-child {
+	width: 30rpx;
+	height: 30rpx;
+	background-color: var(--firstwordColor);
+	border-radius: 100%;
+	display: inline-block;
+	-webkit-animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
+	animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
+}
+
+.sk-three-bounce .sk-bounce1 {
+	-webkit-animation-delay: -0.32s;
+	animation-delay: -0.32s;
+}
+
+.sk-three-bounce .sk-bounce2 {
+	-webkit-animation-delay: -0.16s;
+	animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-three-bounce {
+	0%, 80%, 100% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+	40% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+
+@keyframes sk-three-bounce {
+	0%, 80%, 100% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+	40% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}

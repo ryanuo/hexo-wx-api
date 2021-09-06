@@ -1,0 +1,269 @@
+/*
+ * @Description: 列表星球
+ * @Author: Harry
+ * @Date: 2021-09-04 22:36:36
+ * @Url: https://u.mr90.top
+ * @github: https://github.com/rr210
+ * @LastEditTime: 2021-09-06 20:53:46
+ * @LastEditors: Harry
+ */
+
+page {
+  width: 100%;
+  height: 100vh; // 设置页面无法上下滑动
+  overflow-x: hidden;
+  background: url(https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/0a1f94bc3d42c0e5.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+// 关于页面的设计
+.about_cate {
+  position: absolute;
+  top: 60rpx;
+  right: 50rpx;
+  width: 60rpx;
+  height: 60rpx;
+  z-index: 10;
+  animation: bounce 2s linear infinite;
+
+  image {
+    width: 100%;
+  }
+}
+
+// 弹窗的界面设计
+.remind_w {
+  position: absolute;
+  top: calc(50% - 200rpx);
+  left: calc(50% - 300rpx);
+  width: 600rpx;
+  height: 400rpx;
+  padding: 20rpx;
+  background-color: rgba(27, 26, 26, 0.945);
+  border-radius: 20rpx;
+  box-shadow: 0 0 20rpx var(--shadowColor);
+  z-index: 99;
+  color: var(--themeLightColor);
+  animation: bounceIn 1.2s linear;
+
+  .tit_r {
+    margin: 20rpx;
+    text-align: center;
+    padding: 20rpx;
+    font-size: 35rpx;
+    border-bottom: 2rpx solid var(--themeLightColor);
+  }
+
+  .con_r {
+    text-indent: 2rem;
+
+    text {
+      color: red;
+    }
+  }
+
+  .canel_btn {
+    width: 120rpx;
+    height: 60rpx;
+    padding: 10rpx;
+    margin: 20rpx auto;
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    text-align: center;
+    line-height: 50rpx;
+    border-radius: 20rpx;
+  }
+}
+
+//  中心区设计
+.xx_1 {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
+
+  .mid_2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220rpx;
+    height: 220rpx;
+    transform: translate(-50%, -50%);
+    background-color: rgb(235, 235, 235);
+    border-radius: 50%;
+    box-shadow: 0 0 20rpx var(--shadowColor);
+    overflow: hidden;
+    z-index: 9;
+
+    .mid_1 {
+      width: 140rpx;
+      height: 140rpx;
+      border-radius: 50%;
+      margin: 40rpx auto;
+      box-shadow: 0 0 20rpx var(--shadowColor);
+      overflow: hidden;
+      background-color: rgb(199, 199, 199);
+    }
+  }
+}
+
+// 第一层设计
+
+.other_w {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300rpx;
+  height: 300rpx;
+  border: 3rpx dashed rgb(242, 241, 247);
+  // box-shadow: 0 0 20rpx 3rpx rgba(204, 204, 204, 0.247);
+  border-radius: 50%;
+  transform-origin: center center;
+  animation: planet-rotate 20s linear infinite;
+
+  .ball {
+    position: absolute;
+    top: 20rpx;
+    left: 6rpx;
+    width: 60rpx;
+    height: 60rpx;
+    font-size: 20rpx;
+    font-weight: 550;
+    text-align: center;
+    background-color: rgb(199, 199, 199);
+    box-shadow: 0 0 20rpx var(--shadowColor);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center center;
+    animation: self-rotate 20s linear infinite;
+
+    text {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0 5rpx;
+      color: var(--themeLightColor);
+      background-color: rgba(255, 0, 0, 0.671);
+      font-size: 20rpx;
+      border-radius: 10rpx;
+    }
+  }
+}
+
+// 星球全部的列表设计
+.all_cate_list {
+  opacity: 0;
+  position: absolute;
+  top: calc(50% - 300rpx);
+  left: calc(50% - 350rpx);
+  height: 600rpx;
+  width: 700rpx;
+  color: var(--themeDarkColor);
+  z-index: -1;
+  padding: 10rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  overflow: hidden;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    z-index: -1;
+    background-color: rgba(229, 228, 240, 0.808);
+    filter: blur(20rpx);
+  }
+
+  .item_w {
+    display: inline-block;
+    width: 25%;
+    margin: 18rpx 18rpx 18rpx 28rpx;
+    position: relative;
+
+    text {
+      position: absolute;
+      top: 0;
+      left: -13px;
+      padding: 0 5rpx;
+      color: var(--themeLightColor);
+      background-color: rgba(255, 0, 0, 0.671);
+      font-size: 28rpx;
+      border-radius: 10rpx;
+    }
+  }
+
+}
+// 控制元素的显示和隐藏
+#show_list{
+  animation: fadeInDown .5s linear;
+  opacity: 1;
+  z-index: 9999;
+}
+
+#hide_list{
+  animation: fadeOutDown 1s linear;
+  z-index: -1;
+}
+// 遮罩层
+.canel_btn1 {
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(66, 65, 65, 0.678);
+  z-index: 9998;
+}
+
+.xx_2 {
+  margin: 20rpx auto;
+  width: 80%;
+  height: 80rpx;
+  border-radius: 20rpx;
+  display: flex;
+  text-align: center;
+  line-height: 80rpx;
+
+  .item_2 {
+    flex: 1;
+    border-radius: 20rpx;
+    background-color: rgb(199, 199, 199);
+    box-shadow: 0 0 20rpx var(--shadowColor);
+  }
+
+  .item_2_1 {
+    flex: 2;
+    margin: 0 20rpx;
+    border-radius: 20rpx;
+    box-shadow: 0 0 20rpx var(--shadowColor);
+    background-color: rgb(199, 199, 199);
+  }
+}
+
+// 公转旋转
+
+@keyframes planet-rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+// 自转旋转
+
+@keyframes self-rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

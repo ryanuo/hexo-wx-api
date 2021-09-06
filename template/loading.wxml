@@ -1,0 +1,18 @@
+<!-- /*
+ * @Description: 加载动画
+ * @Author: Harry
+ * @Date: 2021-09-05 12:42:00
+ * @Url: https://u.mr90.top
+ * @github: https://github.com/rr210
+ * @LastEditTime: 2021-09-05 12:45:19
+ * @LastEditors: Harry
+ */ -->
+
+
+<template name="tempLoading">
+<view class="sk-three-bounce">
+    <view class="sk-child sk-bounce1"></view>
+    <view class="sk-child sk-bounce2"></view>
+    <view class="sk-child sk-bounce3"></view>
+</view>
+</template>

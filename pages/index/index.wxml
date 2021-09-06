@@ -1,0 +1,149 @@
+<!--
+ * @Description: 首页
+ * @Author: Harry
+ * @Date: 2021-09-04 16:42:05
+ * @Url: https://u.mr90.top
+ * @github: https://github.com/rr210
+ * @LastEditTime: 2021-09-05 16:48:16
+ * @LastEditors: Harry
+-->
+
+<!-- 
+<import src="../../templates/common-list.wxml" />
+<import src="../../templates/copyright.wxml" /> -->
+<import src="../../template/loading.wxml" />
+<wxs src="../../template/dates.wxs" module="tools"></wxs>
+<!-- 首次进入引导添加到“我的小程序” -->
+<view class="addMyMiniapp" wx:if="{{isFirst}}" catchtap="shutAddMyMiniapp">
+	<view>点击加入我的小程序 ↑</view>
+	<text>了解"{{webSiteName}}"最新文章</text>
+</view>
+<!-- <view>
+	<form catchsubmit="formSubmit" catchreset="formReset" id="search-form">
+		<view class="search-box">
+			<input value="" id="search-input" name="input" confirm-type="search" class="search-input" placeholder="亲！这里搜索课程哟"
+			 bindconfirm="formSubmit"></input>
+			<button class="search-button" form-type="submit" size="mini" plain="true">
+				<icon type="search" color="#959595" size="16" />
+			</button>
+		</view>
+	</form>
+</view> -->
+
+<view>
+	<!-- 轮播图 -->
+	<view style="display:{{displaySwiper}}">
+		<view class="uni-margin-wrap">
+			<swiper class="swiper" circular indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicator_color}}" indicator-active-color="{{indicator_active_color}}">
+				<block wx:key="item" wx:for="{{postsShowSwiperList}}" wx:for-item="item" wx:for-index="index">
+					<swiper-item id="{{'swiper_'+index}}" index="{{index}}" data-url="{{item.slug}}" bindtap="redictAppDetail">
+						<view class="swiper-item">
+							<image class="fr-swiper-img" mode="aspectFill" src="{{item.cover}}" />
+						</view>
+					</swiper-item>
+				</block>
+			</swiper>
+		</view>
+	</view>
+	<view><hr-wave class="wave" id="wave"></hr-wave></view>
+	
+	
+	<!-- 标题 -->
+	<view class="index-h">
+		<font><label class="index-h-blue _span">工</label>具导航</font>
+		<font class="index-h-all">滑动查看</font>
+	</view>
+
+	<!-- 精选栏目 -->
+	<view class="selected-nav" wx:if="{{topNav.length != 0}}">
+		<!-- 栏目列表 -->
+		<scroll-view scroll-x>
+			<view class="selected-nav-list">
+				<block wx:key="id" wx:for="{{topNav}}">
+					<view wx:if="{{ item.redirecttype == 'webpage' || item.redirecttype == 'apppage'}}">
+						<view class="selected-nav-item" catchtap="onNavRedirect" id="{{item.id}}" data-redicttype="{{item.redirecttype}}" data-url="{{item.url}}" data-appid="{{item.appid}}" data-extraData="{{item.extraData}}">
+							<view>
+								<image class="fr-gju-img" src="{{item.image}}"></image>
+							</view>
+							<view>
+								<text>{{item.name}}</text>
+							</view>
+						</view>
+					</view>
+
+					<view wx:if="{{ item.redirecttype == 'miniapp'}}">
+						<view class="selected-nav-item">
+							<navigator path="{{item.url}}" hover-class="none" open-type="navigate" app-id="{{item.appid}}" target="miniProgram">
+								<view>
+									<image class="fr-gju-img" src="{{item.image}}"></image>
+								</view>
+								<text>{{item.name}}</text>
+							</navigator>
+						</view>
+					</view>
+				</block>
+			</view>
+		</scroll-view>
+	</view>
+
+<!-- 星茫 关注微信公众号组件添加组件 -->
+	<view style="margin: 28rpx;">
+		<official-account></official-account>
+	</view>
+
+
+	<!-- 标题 -->
+	<view class="index-h">
+		<font v><label class="index-h-blue _span">最</label>新文章</font>
+		<font class="index-h-all">All</font>
+	</view>
+
+	<!-- 文章列表 -->
+	<view tyle="display:{{showallDisplay}}">
+		<view wx:for="{{postsList}}" wx:for-item="item" wx:for-index="index" wx:key="item">
+			<view class="cent-div" index="{{index}}" id="{{item.id}}" bindtap="redictAppDetail" data-url="{{item.slug}}" style='opacity:{{index >= (page-1)*2?op:"1"}};transition:all {{index >= (page-1)*2?(index-(page-1)*2)*0.5+0.5:"0"}}s;'>
+				<view class="cent-dw">
+					<view class="cnet-img-w">
+						<image class="fr-swiper-img" src="{{item.cover}}" binderror="errorImg" data-index="{{index}}" mode="aspectFill"></image>
+					</view>
+					<view class="cent-wz-h">{{item.title}}</view>
+					<!-- <view class="cent-wz-f">
+						<rich-text nodes="{{item.excerpt.rendered}}"></rich-text>
+					</view> -->
+					<view class="cent-wz-icon">
+						<view class="post-data">
+							<image src="../../static/images/calendar.png" mode="widthFix"></image>
+							<text>{{tools.timeChange(item.date)}}</text>
+							<image src="../../static/images/cate.png" mode="widthFix"></image>
+							<text class="">{{item.categories[0].name}}</text>
+							<!-- <image src="../../static/images/home-like.png" mode="widthFix"></image>
+							<text class="">{{item.date}}</text>
+							<image src="../../static/images/pageviews.png" mode="widthFix"></image>
+							<text class="">{{item.date}}</text> -->
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- <template is="tempCommonList" data="{{postsList:postsList,listAdsuccess:listAdsuccess}}" /> -->
+		<view style='display:{{isLoading?"block":"none"}}'>
+			<template is="tempLoading" />
+		</view>
+		<!-- 无更多文章提示 -->
+		<view class="loadingmore" style="display:{{floatDisplay}}">
+			<view class="no-more" hidden="{{!isLastPage}}">- 无更多文章 -</view>
+		</view>
+	</view>
+	<!-- 无法访问网络 -->
+	<view class="showerror" style="display:{{showerror}}">
+		<image src="../../static/images/cry80.png" style="height:100rpx;width:100rpx"></image>
+		<view class="errortext">
+			暂时无法访问网络，下拉重试...
+		</view>
+	</view>
+
+
+</view>
+
+
+<!-- 星尘 -->

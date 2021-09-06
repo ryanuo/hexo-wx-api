@@ -1,0 +1,34 @@
+/*
+ * @Description: 
+ * @Author: Harry
+ * @Date: 2021-09-05 13:44:18
+ * @Url: https://u.mr90.top
+ * @github: https://github.com/rr210
+ * @LastEditTime: 2021-09-05 14:11:47
+ * @LastEditors: Harry
+ */
+function formatFunc(str) {
+  return str > 9 ? str : '0' + str
+}
+function timeChage(res){
+  console.log(res);
+  if (!res) {
+    return '-';
+  }
+  let date2 = new Date(res);
+  let year = date2.getFullYear();
+  let mon = formatFunc(date2.getMonth() + 1);
+  let day = formatFunc(date2.getDate());
+  let hour = date2.getHours();
+  //let noon = hour >= 12 ? 'PM' : 'AM'; 
+  hour = hour >= 12 ? hour : hour;
+  //hour = hour >= 12 ? hour - 12 : hour; 
+  hour = formatFunc(hour);
+  let min = formatFunc(date2.getMinutes());
+  let sec = formatFunc(date2.getSeconds());
+  let dateStr = year + '.' + mon + '.' + day + ' ' + hour + ':' + min;
+  return dateStr;
+}
+module.exports = {
+  timeChange: timeChange
+}

@@ -1,0 +1,10 @@
+<view class="zr">
+  <view class='user_box' hidden="{{isShowInfo}}">
+</view>
+  <view class="water">
+    <view class="water-c">
+      <view class="water-1"> </view>
+      <view class="water-2"> </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<!--
+ * @Description: 搜索组件
+ * @Author: Harry
+ * @Date: 2021-09-04 16:53:50
+ * @Url: https://u.mr90.top
+ * @github: https://github.com/rr210
+ * @LastEditTime: 2021-09-04 16:55:50
+ * @LastEditors: Harry
+-->
+
+<view>
+	<form catchsubmit="formSubmit" catchreset="formReset" id="search-form">
+		<view class="search-box">
+			<input value="" id="search-input" name="input" confirm-type="search" class="search-input" placeholder="亲！这里搜索课程哟"
+			 bindconfirm="formSubmit"></input>
+			<button class="search-button" form-type="submit" size="mini" plain="true">
+				<icon type="search" color="#959595" size="16" />
+			</button>
+		</view>
+	</form>
+</view>

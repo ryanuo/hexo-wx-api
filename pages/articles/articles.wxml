@@ -1,0 +1,6 @@
+<view class="articles_wrap">
+  <view class="hd_wrap">
+    <view class="title_w">{{htmlText.title}}</view>
+  </view>
+<mp-html content="{{htmlText.content}}" preview-img />
+</view>

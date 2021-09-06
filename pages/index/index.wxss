@@ -1,0 +1,222 @@
+/*
+ * @Description: 首页样式
+ * @Author: Harry
+ * @Date: 2021-09-04 16:42:05
+ * @Url: https://u.mr90.top
+ * @github: https://github.com/rr210
+ * @LastEditTime: 2021-09-06 14:50:13
+ * @LastEditors: Harry
+ */
+/* 文章列表 */
+.cent-wz-icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  margin: 0rpx 28rpx 24rpx 28rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.cent-wz-f {
+  margin: 8rpx 28rpx;
+  color: #3d4e82;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 28rpx;
+}
+.cent-wz-h {
+  margin: 14rpx 28rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.cnet-img-w {
+  height: 188rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 0 10rpx var(--shadowColor);
+}
+.cent-dw {
+  border-radius: 20rpx;
+  border: 1px var(--themeLightColor) solid;
+  box-shadow: -3rpx 0rpx 10rpx var(--shadowColor);
+}
+.cent-div {
+  margin-top: 50rpx;
+  margin-bottom: 9rpx;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+}
+/* 标题 */
+.index-h-all {
+  color: var(--SubtitleColor);
+  font-size: 400;
+  font-size: 28rpx;
+}
+.index-h {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin: 24rpx 30rpx 0rpx 30rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.index-h-blue {
+  color: var(--firstwordColor);
+}
+.ma-60 {
+  margin-top: 50rpx;
+}
+/* 轮播 */
+.uni-margin-wrap {
+  width: 690rpx;
+  margin: 0 30rpx;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+}
+.swiper {
+  height: 400rpx;
+}
+.swiper-item {
+  display: block;
+  height: 340rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  /* box-shadow:0px 5px 15px rgba(0,0,0,0.16); */
+  position: relative;
+}
+.fr-swiper-img {
+  width: 100%;
+  height: 100%;
+}
+.fr-swiper-cent {
+  position: absolute;
+  z-index: 2;
+  bottom: 28rpx;
+  overflow: hidden;
+  border-radius: 20rpx;
+  -webkit-backdrop-filter: blur(90px);
+  backdrop-filter: blur(90px);
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  width: 65%;
+  margin-left: 15%;
+  padding: 10rpx 20rpx;
+}
+.fr-swiper-ff {
+  color: var(--themeLightColor);
+  width: 88%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.fr-yuan-d {
+  position: absolute;
+  right: 20rpx;
+  top: 16rpx;
+  height: 40rpx;
+  width: 40rpx;
+  border-radius: 50%;
+  background-color: #d8d8d8;
+  overflow: hidden;
+}
+/* 引导添加到我的小程序 */
+.addMyMiniapp {
+  color: var(--themeLightColor);
+  line-height: 1.2;
+  background: var(--firstwordColor);
+  padding: 24rpx 24rpx;
+  border-radius: 12rpx;
+  position: fixed;
+  top: 20rpx;
+  right: 110rpx;
+  z-index: 999;
+  box-shadow: 0 16rpx 30rpx -12rpx var(--shadowColor);
+}
+.addMyMiniapp > view {
+  font-size: 24rpx;
+  font-weight: 500;
+}
+.addMyMiniapp > text {
+  font-size: 20rpx;
+  font-weight: 200;
+}
+.addMyMiniapp::before {
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  background: var(--firstwordColor);
+  transform: rotate(45deg);
+  position: absolute;
+  right: 30rpx;
+  top: -10rpx;
+}
+/* 精选栏目菜单导航 */
+.fr-gju-dx {
+  width: 156rpx;
+  height: 156rpx;
+  border-radius: 6rpx;
+  background: #f5f7f7;
+}
+.fr-gju-img {
+  height: 100rpx;
+  width: 100rpx;
+}
+.selected-nav {
+  background-color: var(--themeLightColor);
+  margin: 0rpx 26rpx;
+  border-radius: 10rpx;
+  margin-top: 30rpx;
+}
+.selected-nav-list {
+  display: flex;
+  padding: 8rpx 20rpx 8rpx 20rpx;
+  justify-content: space-between;
+}
+.selected-nav-item {
+  margin-right: 16rpx;
+  text-align: center;
+  width: 150rpx;
+}
+.selected-nav-item text {
+  line-height: 26rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+  color: var(--titleColor);
+  margin-top: -10rpx;
+  display: block;
+}
+.post-data image {
+  width: 24rpx;
+  vertical-align: middle;
+}
+.post-data text {
+  font-size: 20rpx;
+  color: var(--SubtitleColor);
+  margin-right: 10rpx;
+  margin-left: 4rpx;
+}
+.loadingmore,
+.showerror {
+  margin: 20rpx 0;
+  color: var(--SubtitleColor);
+  text-align: center;
+}

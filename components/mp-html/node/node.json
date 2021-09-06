@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "txv-video": "plugin://tencentvideo/video",
+    "node": "./node"
+  },
+  "styleIsolation": "isolated"
+}

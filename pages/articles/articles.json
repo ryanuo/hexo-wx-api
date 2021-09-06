@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mp-html": "/components/mp-html/index"
+  },
+  "navigationBarTitleText": "文章详情"
+}
