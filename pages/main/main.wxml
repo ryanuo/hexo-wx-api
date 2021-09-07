@@ -1,2 +1,65 @@
-<!--pages/main/main.wxml-->
-<text>pages/main/main.wxml</text>
+<view class="main_w">
+  <view class="hd_w">
+    <view class="img_w">
+      <view class="img_w_1">
+        <image mode="widthFix" class="" src="{{!isLogin?'../../static/images/gravatar.png':hasUserInfo.avatarUrl}}">
+        </image>
+      </view>
+      <view class="Nickname">{{isLogin&&hasUserInfo.nickName}}<view class="title_w_1">海纳百川,厚积薄发</view>
+      </view>
+      <view class="btn_u">
+        <button style="width:100%;height:80rpx;border-radius:20rpx"
+          bindtap="getUserProfile">{{!isLogin?'未登录':'更新'}}</button>
+      </view>
+    </view>
+  </view>
+  <!-- 中部设计开始 -->
+  <view class="mid_w_share">
+    <view class="mid_item">
+      <image class="" mode="widthFix" src="../../static/icon/main/ewm.png"></image>
+      <view class="text_">分享海报</view>
+    </view>
+    <view class="mid_item">
+      <image class="" src="../../static/icon/main/kf.png" mode="widthFix"></image>
+      <view class="text_">联系我</view>
+    </view>
+  </view>
+  <!-- 底部设计开始 -->
+  <view class="function_w">
+    <view class="item_f">
+      <view class="icon_i"><image class="" src="../../static/icon/main/sc.png" mode="widthFix"></image></view>
+      <view class="title_w">我的收藏</view>
+    </view>
+        <view class="item_f">
+      <view class="icon_i"><image class="" src="../../static/icon/main/fk.png" mode="widthFix"></image></view>
+      <view class="title_w">问题反馈</view>
+    </view>
+        <view class="item_f">
+      <view class="icon_i"><image class="" src="../../static/icon/main/ab.png" mode="widthFix"></image></view>
+      <view class="title_w">关于程序</view>
+    </view>
+        <view class="item_f">
+      <view class="icon_i"><image class="" src="../../static/icon/main/gb.png" mode="widthFix"></image></view>
+      <view class="title_w">退出登录</view>
+    </view>
+  </view>
+</view>
+
+
+<block wx:if="{{!hasUserInfo}}">
+  <!-- 遮罩层 -->
+  <view class="mask_w" bindtap="closeLoginPopup"></view>
+  <view class="login_w">
+    <view class="login-fr">
+      <image mode="widthFix" class="login-img" src="../../static/images/login.png"></image>
+    </view>
+    <view class="login-h">
+      欢迎登入小程序
+    </view>
+    <view class="login-h-t">
+      如果无法登录，请点击我的界面“清除缓存”后再登录
+    </view>
+    <button class="login-bt" bindtap="getUserProfile">确定</button>
+    <button class="login-bt2" bindtap="closeLoginPopup">取消</button>
+  </view>
+</block>

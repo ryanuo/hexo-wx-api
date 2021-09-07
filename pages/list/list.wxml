@@ -11,7 +11,7 @@
   </view>
   <!-- 展示全部的列表分类/ -->
   <scroll-view class="all_cate_list" id="{{isflag?isclickimg?'show_list':'hide_list':''}}" scroll-y>
-    <view class="item_w" wx:for="{{listCates}}" wx:for-index="index" wx:for-item="item" wx:key="item">{{item.name}}
+    <view class="item_w" data-name="{{item.name}}" bindtap="navTo" wx:for="{{listCates}}" wx:for-index="index" wx:for-item="item" wx:key="item">{{item.name}}
      <text>{{item.count}}</text>
     </view>
   </scroll-view>

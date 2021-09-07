@@ -1,12 +1,12 @@
 # 仓库简介
 
-![GitHub last commit](https://img.shields.io/github/last-commit/rr210/hexo-wx-api?color=blue&logo=github&style=plastic) ![GitHub all releases](https://img.shields.io/github/downloads/rr210/hexo-wx-api/total?logo=github)  ![npm](https://img.shields.io/npm/v/hexo-generator-restful-wx?color=green&logo=npm)
+![GitHub last commit](https://img.shields.io/github/last-commit/rr210/hexo-wx-api?color=blue&logo=github&style=plastic) ![GitHub all releases](https://img.shields.io/github/downloads/rr210/hexo-wx-api/total?logo=github)  [![npm](https://img.shields.io/npm/v/hexo-generator-restful-wx?color=green&logo=npm)](https://www.npmjs.com/package/hexo-generator-restful-wx)
 
 * 个人博客微信小程序
 * 配置hexo插件生成json数据接口
 * 适用于hexo的各类主题版本
 
-![首页展示](https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210906211822.png)
+![首页展示](https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210906211822.png)  ![主页展示](https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210907223503.png)
 
 ## 部署方法
 
@@ -77,33 +77,9 @@ const INDEXNAV = [{
     redirecttype: 'apppage',
     appid: '',
     extraData: ''
-  },
-  {
-    id: '5',
-    name: '搜索文章',
-    image: '../../static/icon/index/2.png',
-    url: '../search/search',
-    redirecttype: 'apppage',
-    appid: '',
-    extraData: ''
-  },
-  {
-    id: '7',
-    name: '问答讨论',
-    image: '../../static/icon/index/3.png',
-    url: '../feng/feng',
-    redirecttype: 'apppage',
-    appid: '',
-    extraData: ''
-  },
-  {
-    id: '10',
-    name: '关于我们',
-    image: '../../static/icon/index/4.png',
-    url: '../about/about',
-    redirecttype: 'apppage',
-    appid: '',
-    extraData: ''
   }
+  // ...........
 ];
 ```
+
+* 样式的配置在全局文件`app.wxss`文件中

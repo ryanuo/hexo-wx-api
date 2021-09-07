@@ -10,24 +10,28 @@
 page {
   height: 100vh;
   width: 100%;
-  background-color: #f6f6f6;
+  background-color: rgb(246, 246, 246);
 }
+
 .login-fr {
   height: 300rpx;
   width: 300rpx;
   overflow: hidden;
   margin: 40rpx auto;
 }
+
 .login-img {
   width: 100%;
   height: 100%;
 }
+
 .login-h {
   text-align: center;
   margin: 20rpx 0rpx;
   font-weight: bold;
   /* font-size: 36rpx; */
 }
+
 .login-bt {
   background-color: var(--firstwordColor);
   border-radius: 100rpx;
@@ -38,37 +42,51 @@ page {
   border: var(--firstwordColor) 1px solid;
   margin-top: 60rpx;
 }
+
 .login-bt2 {
   background-color: var(--themeLightColor);
-  color: #c9c5c5;
+  color: rgb(201, 197, 197);
   font-size: 30rpx;
   margin-bottom: 24rpx;
   border: var(--themeLightColor) 1px solid;
 }
-button::after {
-  border: 1px solid rgba(0, 0, 0, 0);
+
+button {
+  &::after {
+    border: 1px solid rgba(0, 0, 0, .0);
+  }
 }
+
 .login-h-t {
   text-align: center;
-  color: #413e3e;
+  color: rgb(65, 62, 62);
   font-size: 24rpx;
   margin: 20rpx 0rpx;
   width: 80%;
   margin-left: 10%;
 }
-.login-inner .username {
-  color: var(--firstwordColor);
-  font-size: 32rpx;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
+
+.login-inner {
+  .username {
+    color: var(--firstwordColor);
+    font-size: 32rpx;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
 }
-.login-inner .username text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 32rpx;
+
+.login-inner {
+  .username {
+    text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 32rpx;
+    }
+  }
 }
+
 .login_w {
   width: 600rpx;
   position: absolute;
@@ -80,6 +98,8 @@ button::after {
   height: 800rpx;
   z-index: 1;
 }
+
+// 遮罩层的设计
 .mask_w {
   position: absolute;
   top: 0;
@@ -87,8 +107,11 @@ button::after {
   width: 100%;
   height: 100%;
   z-index: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, .7);
 }
+
+
+// 头像设计开始
 .hd_w {
   position: relative;
   width: 90%;
@@ -98,6 +121,7 @@ button::after {
   background: url(https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/beijings.png) no-repeat;
   background-size: 100% 100%;
 }
+
 .img_w {
   position: absolute;
   bottom: 0;
@@ -111,96 +135,112 @@ button::after {
   align-items: center;
   background-color: rgba(255, 255, 255, 0.712);
   border-radius: 20rpx;
+
+  .img_w_1 {
+    flex: 2;
+
+    image {
+      border-radius: 50%;
+      width: 75%;
+    }
+  }
+
+  .Nickname {
+    flex: 3;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    font-size: 40rpx;
+    font-weight: 500;
+    font-family: cursive;
+
+    .title_w_1 {
+      padding: 10rpx 0;
+      font-size: 25rpx;
+      color: #888;
+      font-weight: unset;
+    }
+  }
+
+  .btn_u {
+    flex: 2;
+
+    button {
+      font-weight: unset;
+      color: #fff;
+      background-color: var(--firstwordColor);
+    }
+  }
 }
-.img_w .img_w_1 {
-  flex: 2;
-}
-.img_w .img_w_1 image {
-  border-radius: 50%;
-  width: 75%;
-}
-.img_w .Nickname {
-  flex: 3;
-  font-size: 40rpx;
-  font-weight: 500;
-  font-family: cursive;
-}
-.img_w .Nickname .title_w_1 {
-  padding: 10rpx 0;
-  font-size: 25rpx;
-  color: #888;
-  font-weight: unset;
-}
-.img_w .btn_u {
-  flex: 2;
-}
-.img_w .btn_u button {
-  font-weight: unset;
-  color: #fff;
-  background-color: var(--firstwordColor);
-}
+
+// 头像设计结束
+// 分享和联系
 .mid_w_share {
   margin: 30rpx auto;
   width: 700rpx;
   height: 160rpx;
   background-color: #fff;
-  color: #949494;
+  color: rgb(148, 148, 148);
   border-radius: 20rpx;
   display: flex;
   justify-content: space-between;
   padding: 0 100rpx;
+
+  .mid_item {
+    width: 150rpx;
+    height: 160rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    image {
+      width: 55%;
+    }
+
+    .text_ {
+      padding: 10rpx 0;
+      font-size: 25rpx;
+      font-weight: 500;
+    }
+  }
 }
-.mid_w_share .mid_item {
-  width: 150rpx;
-  height: 160rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.mid_w_share .mid_item image {
-  width: 55%;
-}
-.mid_w_share .mid_item .text_ {
-  padding: 10rpx 0;
-  font-size: 25rpx;
-  font-weight: 500;
-}
-.function_w {
+
+// 底部设计开始
+.function_w{
   width: 700rpx;
   height: 528rpx;
   margin: 30rpx auto;
   background-color: #fff;
   border-radius: 20rpx;
   padding: 20rpx;
-}
-.function_w .item_f {
-  position: relative;
-  display: flex;
-}
-.function_w .item_f::after {
-  position: absolute;
-  content: '';
-  top: calc(50% - 18rpx);
-  right: 60rpx;
-  height: 18rpx;
-  width: 18rpx;
-  border-top: 4rpx solid #ccc;
-  border-right: 4rpx solid #ccc;
-  transform: rotateZ(45deg);
-}
-.function_w .item_f .icon_i {
-  flex: 1;
-  height: 132rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.function_w .item_f .icon_i image {
-  width: 50%;
-}
-.function_w .item_f .title_w {
-  flex: 5;
-  font-size: 30rpx;
-  line-height: 132rpx;
+  .item_f{
+    position: relative;
+    &::after{
+      position: absolute;
+      content: '';
+      top: calc(50% - 18rpx);
+      right: 60rpx;
+      height: 18rpx;
+      width: 18rpx;
+      border-top: 4rpx solid #ccc;
+      border-right: 4rpx solid #ccc;
+      transform: rotateZ(45deg);
+    }
+    display: flex;
+    .icon_i{
+      flex: 1;
+      height: 132rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      image{
+        width: 50%;
+      }
+    }
+    .title_w{
+      flex: 5;
+      font-size: 30rpx;
+      line-height: 132rpx;
+    }
+  }
 }

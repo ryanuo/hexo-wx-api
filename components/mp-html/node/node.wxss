@@ -76,6 +76,24 @@ page {
   margin: 20rpx auto;
   border-radius: 20rpx;
 }
+._ul ._li {
+  position: relative;
+}
+._ul ._li::marker {
+  display: none;
+  content: '';
+}
+._ul ._li::before {
+  position: absolute;
+  top: 8rpx;
+  left: -30rpx;
+  width: 0.42em;
+  height: 0.42em;
+  border: 0.21em solid var(--articleThemeColor);
+  border-radius: 0.42em;
+  background: 0 0;
+  content: '';
+}
 ._h3 {
   font-size: 1.17em;
 }
@@ -106,7 +124,7 @@ page {
 ._ol,
 ._ul {
   display: block;
-  padding-left: 40px;
+  padding-left: 40rpx;
   margin: 1em 0;
 }
 ._q::before {
