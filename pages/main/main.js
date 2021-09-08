@@ -4,7 +4,7 @@
  * @Date: 2021-09-04 16:25:15
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-09-07 21:39:08
+ * @LastEditTime: 2021-09-08 14:16:12
  * @LastEditors: Harry
  */
 // pages/main/main.js
@@ -46,6 +46,20 @@ Page({
     this.setData({
       hasUserInfo: !this.data.hasUserInfo
     })
+  },
+  // 退出登录
+  closeF(){
+    wx.clearStorage();
+    wx.switchTab({
+      url: '/pages/index/index',
+      success: (result)=>{
+        wx.showToast({
+          title: '退出成功',
+          icon: 'none',
+          duration: 1500
+        });
+      }
+    }); 
   },
 
   /**

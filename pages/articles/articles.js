@@ -9,7 +9,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    htmlText: ''
+    isLoding: false,
+    htmlText: '',
+    author_d: {}
   },
 
   /**
@@ -29,10 +31,31 @@ Page({
       .then(res => {
         if (res.statusCode == 200) {
           _this.setData({
-            htmlText:res.data
+            htmlText: res.data,
+            author_d: {
+              name: config.getAuthorname,
+              img: config.getAuthorImg,
+              domain: config.getDomain,
+              webname: config.getWebsiteName
+            },
+            isLoding: true
           })
         }
       })
+  },
+  // 点击复制链接到剪切板
+  Nav_a(e) {
+    let { con } = e.currentTarget.dataset
+    let data = ''
+    switch (con) {
+      case "1":
+        data = config.getDomain
+        break;
+      case "2":
+        data = 'https://creativecommons.org/licenses/by-nc-sa/4.0/'
+    }
+    // 设置剪切板的内容
+    wx.setClipboardData({data})
   },
 
   /**

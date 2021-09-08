@@ -14,13 +14,17 @@ image {
 page {
 	/* 定义主题颜色 */
 	--themeColor: #48b378;
-	--articleThemeColor: #48b378;
+	--articleThemeColor: #48b378; /* 文章主题色 */
+	--articeTag: #e1ffe3;  /* 文章标签色 */
 	--themeLightColor: #fff;
 	--themeDarkColor: #000;
 	--titleColor: #333;
 	--SubtitleColor: #b3b9be;
 	--firstwordColor: #118fff;
 	--shadowColor: #ccc;
+	--hightNumDark: #212121;
+	--hightNumfont: rgba(238,255,255,0.5);
+	--codeColor: #eff;
 	font-size: 32rpx;
 }
 

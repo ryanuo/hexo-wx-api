@@ -22,6 +22,7 @@
     <view class="mid_item">
       <image class="" src="../../static/icon/main/kf.png" mode="widthFix"></image>
       <view class="text_">联系我</view>
+      <button class="contact" open-type="contact"></button>
     </view>
   </view>
   <!-- 底部设计开始 -->
@@ -31,6 +32,7 @@
       <view class="title_w">我的收藏</view>
     </view>
         <view class="item_f">
+          <button class="feed" open-type="feedback"></button>
       <view class="icon_i"><image class="" src="../../static/icon/main/fk.png" mode="widthFix"></image></view>
       <view class="title_w">问题反馈</view>
     </view>
@@ -38,7 +40,7 @@
       <view class="icon_i"><image class="" src="../../static/icon/main/ab.png" mode="widthFix"></image></view>
       <view class="title_w">关于程序</view>
     </view>
-        <view class="item_f">
+        <view class="item_f" bindtap="closeF">
       <view class="icon_i"><image class="" src="../../static/icon/main/gb.png" mode="widthFix"></image></view>
       <view class="title_w">退出登录</view>
     </view>

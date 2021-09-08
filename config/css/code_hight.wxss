@@ -1,0 +1,49 @@
+.gutter {
+  display: none;
+}
+.gutter,
+.line {
+  background-color: var(--hightNumDark);
+  color: var(--hightNumfont);
+  border-radius: 20rpx;
+  padding: 5rpx;
+}
+.comment {
+  color: var(--hightNumfont);
+}
+.content {
+  background-color: var(--hightNumDark);
+  border-radius: 20rpx;
+  box-shadow: 0 0 20rpx var(--shadowColor);
+  color: var(--codeColor);
+  padding: 20rpx;
+}
+.code {
+  background-color: var(--hightNumDark);
+  padding: 20rpx;
+  border-radius: 20rpx;
+  margin: 20rpx;
+  width: 100vh;
+}
+.line {
+  color: var(--codeColor);
+}
+span {
+  color: red;
+}
+.string {
+  color: #c3e88d;
+}
+.selector-class {
+  color: #976e39;
+}
+.selector-tag {
+  color: #89ddff;
+}
+.attribute,
+.built_in {
+  color: #a951ac;
+}
+.keyword {
+  color: #89ddff;
+}

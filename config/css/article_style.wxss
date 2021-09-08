@@ -1,0 +1,108 @@
+/* 自行配置样式 */
+page {
+  font-size: 30rpx;
+}
+._ol,
+._ul {
+  display: block;
+  padding-left: 40rpx;
+  margin: 1em 0;
+}
+._blockquote {
+  padding: 20rpx 30rpx;
+  line-height: 54rpx;
+  background-color: #FBF9FD;
+  border-left: 6rpx solid var(--articleThemeColor);
+  font-size: 30rpx;
+}
+._h2 {
+  font-size: 44rpx;
+  display: block;
+  text-align: center;
+  background-image: url(https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/kaola2.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-size: 100rpx;
+  margin-top: 1em;
+  margin-bottom: 20rpx;
+}
+._h2 text {
+  text-align: center;
+  display: inline-block;
+  height: 76rpx;
+  line-height: 84rpx;
+  color: var(--articleThemeColor);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-size: 126rpx;
+  margin-top: 76rpx;
+  font-size: 36rpx;
+  margin-bottom: 20rpx;
+}
+._p ._img {
+  width: 300rpx !important;
+  box-shadow: 0 0 20rpx var(--shadowColor);
+  display: block;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+}
+._ul ._li {
+  position: relative;
+}
+._ul ._li::marker {
+  display: none;
+  content: '';
+}
+._ul ._li::before {
+  position: absolute;
+  top: 8rpx;
+  left: -30rpx;
+  width: 0.42em;
+  height: 0.42em;
+  border: 0.21em solid var(--articleThemeColor);
+  border-radius: 0.42em;
+  background: 0 0;
+  content: '';
+}
+._ol {
+  counter-reset: ol_li;
+}
+._ol ._li {
+  position: relative;
+}
+._ol ._li::marker {
+  display: none;
+  content: '';
+}
+._ol ._li::before {
+  position: absolute;
+  counter-increment: ol_li;
+  /* 增加计数器值 */
+  content: counter(ol_li) " ";
+  /* 显示计数器 */
+  width: 27rpx;
+  height: 27rpx;
+  border-radius: 50%;
+  top: 10rpx;
+  left: -34rpx;
+  background: var(--articleThemeColor);
+  color: #fff;
+  text-align: center;
+  font-size: 25rpx;
+  line-height: 27rpx;
+}
+._h3 {
+  margin: 20rpx 0;
+}
+._h3 text {
+  font-size: 30rpx;
+  color: var(--articleThemeColor);
+  padding-left: 15rpx;
+  border-left: 8rpx solid var(--articleThemeColor);
+}
