@@ -4,7 +4,7 @@
  * @Date: 2021-09-04 17:12:07
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-09-06 15:04:31
+ * @LastEditTime: 2021-09-10 13:00:48
  * @LastEditors: Harry
  */
 import config from "../config/config";
@@ -29,5 +29,8 @@ module.exports = {
   // 获取指定的分类列表信息
   getCateDetail(CategorieName){
     return Domain + `/api/categories/${CategorieName}.json`
+  },
+  getJsonSearch(){
+    return Domain + '/api/search.json'
   }
 }

@@ -7,6 +7,10 @@ page, view, text, swiper, swiper-item, image, navigator {
 	box-sizing: border-box;
 }
 
+.fonts{
+	font-family: 'WeChatSansSS';
+}
+
 image {
 	width: 100%;
 }
@@ -19,7 +23,7 @@ page {
 	--themeLightColor: #fff;
 	--themeDarkColor: #000;
 	--titleColor: #333;
-	--SubtitleColor: #b3b9be;
+	--SubtitleColor: #909399;
 	--firstwordColor: #118fff;
 	--shadowColor: #ccc;
 	--hightNumDark: #212121;

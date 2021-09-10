@@ -1,4 +1,12 @@
+[toc]
+
 # 仓库简介
+
+![GitHub last commit](https://img.shields.io/github/last-commit/rr210/hexo-wx-api?color=blue&logo=github&style=plastic) ![GitHub all releases](https://img.shields.io/github/downloads/rr210/hexo-wx-api/total?logo=github)  [![npm](https://img.shields.io/npm/v/hexo-generator-wxapi?color=green&logo=npm)](https://www.npmjs.com/package/hexo-generator-wxapi)
+
+* 个人博客微信小程序
+* 配置hexo插件生成json数据接口
+* 适用于hexo的各类主题版本
 
 ## 已上线小程序--搜索 `[今日在学c]`
 
@@ -7,28 +15,24 @@
 <div>一起学习可好? 扫码关注, 了解更多!!</div>
 </div>
 
-![GitHub last commit](https://img.shields.io/github/last-commit/rr210/hexo-wx-api?color=blue&logo=github&style=plastic) ![GitHub all releases](https://img.shields.io/github/downloads/rr210/hexo-wx-api/total?logo=github)  [![npm](https://img.shields.io/npm/v/hexo-generator-restful-wx?color=green&logo=npm)](https://www.npmjs.com/package/hexo-generator-restful-wx)
-
-* 个人博客微信小程序
-* 配置hexo插件生成json数据接口
-* 适用于hexo的各类主题版本
-
-![首页展示](https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210906211822.png)  ![主页展示](https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210907223503.png)  ![文章详情页](https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210908205236.png)  ![列表星球](https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210908205352.png)
+<div align="center">
+<img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210906211822.png" width="220"><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210907223503.png" width="220"><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210908205236.png" width="220"><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210908205352.png" width="220">
+</div>
 
 ## 部署方法
 
 ```html
-npm install hexo-generator-restful-wx--save
+npm install hexo-generator-wxapi --save
 ```
 
-* 使用方法看[这里](https://github.com/rr210/hexo-generator-restful-wx)
+* 使用方法看[这里](https://github.com/rr210/hexo-generator-wxapi)
 
-## 具体步骤
+## 具体步骤(接口配置)
 
-1. 在hexo`_config.yml`文件中加入以下配置
+1. 在hexo`_config.yml`文件中加入以下配置 必须配置
 
-```yml
-restful:
+```yaml
+restful_api:
   # site 可配置为数组选择性生成某些属性
   # site: ['title', 'subtitle', 'description', 'author', 'since', email', 'favicon', 'avatar']
   site: true        # hexo.config mix theme.config
@@ -53,9 +57,11 @@ restful:
   post: true               # 文章数据
   pages: false            # 额外的 Hexo 页面数据, 如 About
   swipers_list: []          # 生成指定的页面信息,做指定的轮播文章展示
+  search_all:                  #  配置全局搜索
+    path: '/api/search.json'  
+    field: 'post'
+    content: true
 ```
-
-2. 具体`api`看[这里](https://github.com/rr210/hexo-generator-restful-wx)
 
 ## 部署成功
 

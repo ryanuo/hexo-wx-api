@@ -1,3 +1,12 @@
+/***
+ * @Description: 讨论页面
+ * @Author: Harry
+ * @Date: 2021-09-04 22:38:00
+ * @Url: https://u.mr90.top
+ * @github: https://github.com/rr210
+ * @LastEditTime: 2021-09-10 14:06:05
+ * @LastEditors: Harry
+ */
 // pages/discuss/discuss.js
 Page({
 

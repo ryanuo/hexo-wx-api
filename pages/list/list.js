@@ -93,7 +93,7 @@ Page({
   },
   // 分类详情页面的跳转
   navTo(e) {
-    let { name } = e.target.dataset
+    let { name } = e.currentTarget.dataset
     if (name) {
       wx.navigateTo({
         url: `/pages/category/category?cateName=${name}`

@@ -4,7 +4,7 @@
  * @Date: 2021-09-04 22:36:36
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-09-07 10:46:28
+ * @LastEditTime: 2021-09-10 08:47:56
  * @LastEditors: Harry
  */
 page {
@@ -112,7 +112,7 @@ page {
   font-size: 20rpx;
   font-weight: 550;
   text-align: center;
-  background-color: #c7c7c7;
+  background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
   box-shadow: 0 0 20rpx var(--shadowColor);
   border-radius: 50%;
   display: flex;
@@ -123,6 +123,7 @@ page {
 }
 .other_w .ball text {
   position: absolute;
+  display: none;
   top: 0;
   right: 0;
   padding: 0 5rpx;
@@ -156,23 +157,26 @@ page {
   background-color: rgba(229, 228, 240, 0.808);
   filter: blur(20rpx);
 }
-.all_cate_list .item_w {
+.cate_item_w {
+  width: 23%;
+  height: 39rpx;
   display: inline-block;
-  width: 25%;
   margin: 18rpx 18rpx 18rpx 28rpx;
-  position: relative;
+  font-size: 30rpx;
+  background-color: #3273dc;
 }
-.all_cate_list .item_w text {
-  position: absolute;
-  top: 0;
-  width: 44rpx;
-  height: 44rpx;
-  left: -13px;
-  padding: 0 5rpx;
-  color: var(--themeLightColor);
-  background-color: rgba(255, 0, 0, 0.671);
-  font-size: 28rpx;
-  border-radius: 10rpx;
+.cate_item_w .item_w {
+  float: left;
+  width: 78%;
+  color: #fff;
+}
+.cate_item_w .list_item_a {
+  float: right;
+  width: 22%;
+  height: 100%;
+  color: #000;
+  background-color: #ededed;
+  font-family: "WeChatSansSS";
 }
 #show_list {
   animation: fadeInDown 0.5s linear;
@@ -204,15 +208,14 @@ page {
 .xx_2 .item_2 {
   flex: 1;
   border-radius: 20rpx;
-  background-color: #c7c7c7;
-  box-shadow: 0 0 20rpx var(--shadowColor);
+  color: #000;
+  background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
 }
 .xx_2 .item_2_1 {
   flex: 2;
   margin: 0 20rpx;
   border-radius: 20rpx;
-  box-shadow: 0 0 20rpx var(--shadowColor);
-  background-color: #c7c7c7;
+  background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
 }
 @keyframes planet-rotate {
   0% {

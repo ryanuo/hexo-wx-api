@@ -4,7 +4,7 @@
  * @Date: 2021-09-04 16:42:05
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-09-06 22:04:39
+ * @LastEditTime: 2021-09-10 09:16:03
  * @LastEditors: Harry
 -->
 
@@ -95,16 +95,13 @@
 					<!-- <view class="cent-wz-f">
 						<rich-text nodes="{{item.excerpt.rendered}}"></rich-text>
 					</view> -->
+					<view class="cate_meta">{{item.categories[0]&&item.categories[0]['name']}}</view>
 					<view class="cent-wz-icon">
 						<view class="post-data">
 							<image src="../../static/images/calendar.png" mode="widthFix"></image>
 							<text>{{tools.timeChange(item.date)}}</text>
 							<image src="../../static/images/cate.png" mode="widthFix"></image>
 							<text class="">{{item.categories[0].name}}</text>
-							<!-- <image src="../../static/images/home-like.png" mode="widthFix"></image>
-							<text class="">{{item.date}}</text>
-							<image src="../../static/images/pageviews.png" mode="widthFix"></image>
-							<text class="">{{item.date}}</text> -->
 						</view>
 					</view>
 				</view>

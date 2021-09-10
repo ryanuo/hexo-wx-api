@@ -4,7 +4,7 @@
  * @Date: 2021-09-04 16:42:05
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-09-06 14:50:13
+ * @LastEditTime: 2021-09-10 09:27:18
  * @LastEditors: Harry
  */
 /* 文章列表 */
@@ -45,12 +45,25 @@
   border-top-left-radius: 20rpx;
   border-top-right-radius: 20rpx;
   overflow: hidden;
-  box-shadow: 0 0 10rpx var(--shadowColor);
 }
 .cent-dw {
+  position: relative;
   border-radius: 20rpx;
   border: 1px var(--themeLightColor) solid;
   box-shadow: -3rpx 0rpx 10rpx var(--shadowColor);
+}
+.cent-dw .cate_meta {
+  position: absolute;
+  padding: 8rpx 20rpx;
+  background: #fff;
+  border-radius: 14rpx;
+  font-size: 25rpx;
+  margin-right: 24rpx;
+  font-weight: 700;
+  color: #000;
+  top: 24rpx;
+  right: 0;
+  box-shadow: 0 0 10rpx rgba(204, 204, 204, 0.377);
 }
 .cent-div {
   margin-top: 50rpx;
