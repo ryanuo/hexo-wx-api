@@ -5,6 +5,7 @@ import config from '../../config/config.js'
 var webSiteName = config.getWebsiteName;
 // var domain = config.getDomain;
 let topNav = config.getIndexNav;
+let ad = config.getAd
 
 Page({
   data: {
@@ -21,6 +22,7 @@ Page({
     webSiteName: webSiteName,  // 网站的名称
     isFirst: false, // 右上角,
     isLoading: false,
+    isAd: ad,
     // 轮播
     indicatorDots: true, //是否显示圆点
     autoplay: true, //是否自动滚动

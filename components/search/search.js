@@ -1,3 +1,12 @@
+/***
+ * @Description: 搜索组件封装
+ * @Author: Harry
+ * @Date: 2021-09-04 16:53:50
+ * @Url: https://u.mr90.top
+ * @github: https://github.com/rr210
+ * @LastEditTime: 2021-09-11 19:16:47
+ * @LastEditors: Harry
+ */
 // components/search/search.js\
 const wxRequest = require('../../utils/wxRequest.js')
 const Api = require('../../utils/api.js');
@@ -62,7 +71,7 @@ Component({
       if (value.length !== 0) {
         // 进行遍历处理
         this.data.allData.filter(v => {
-          let reg = new RegExp(`(${value})`, "gi")
+          let reg = new RegExp(`(${value})`, "i")
           if (reg.test(JSON.stringify(v))) {
             // e表示开始匹配的索引号,先判断内容是否存在
             let c = v.content
@@ -71,7 +80,7 @@ Component({
               let i = v.content.indexOf(value)
               let start = i - 30 < 0 ? 0 : i - 30
               let end = i + 50 > v.content.length ? v.content.length : i + 50
-              let matchContent = v.content.substring(start, end).replace(/\n/g,'')
+              let matchContent = v.content.substring(start, end).replace(/\n/g, '')
               c = _this.getInf(matchContent, value)
             }
             // 对标题进行切割
@@ -80,7 +89,7 @@ Component({
             }
             // 执行关键词切割
             res_list.push(
-              { "title": t, "content": c }
+              { "title": t, "content": c, "slug": v.slug }
             )
             return v
           }
@@ -99,21 +108,17 @@ Component({
     getJsonData() {
       wxRequest.getRequest(Api.getJsonSearch())
         .then(res => {
-          console.log(res);
-          // wx.hideLoading();
           this.setData({
             allData: res.data
           })
         })
-      // wx.showLoading({
-      //   title: '正在加载中',
-      //   mask: true,
-      //   success: (result) => {
-
-      //   },
-      //   fail: () => {},
-      //   complete: () => {}
-      // });
     },
+    // 页面的跳转
+    nav_page(e) {
+      let { slug } = e.currentTarget.dataset
+      wx.navigateTo({
+        url: '/pages/articles/articles?id=' + slug
+      });
+    }
   },
 })

@@ -1,1 +1,111 @@
+/*
+ * @Description: 分类页面的美化
+ * @Author: Harry
+ * @Date: 2021-09-04 22:36:55
+ * @Url: https://u.mr90.top
+ * @github: https://github.com/rr210
+ * @LastEditTime: 2021-09-11 20:23:34
+ * @LastEditors: Harry
+ */
 /* pages/category/category.wxss */
+page {
+  background-color: #f6f6f6;
+}
+.tag_ {
+  display: inline-block;
+  border-radius: 10rpx;
+  padding: 0 10rpx;
+  margin-left: 5rpx;
+  background-color: #000;
+  color: #fff;
+  font-family: WeChatSansSS;
+  font-size: 30rpx;
+}
+.categories_w {
+  padding: 30rpx;
+}
+.categories_w .cate_hd_w {
+  position: relative;
+  border-radius: 20rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.categories_w .cate_hd_w .tag_w_ {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 24rpx;
+}
+.categories_w .cate_hd_w .tag_w_ .tag_w,
+.categories_w .cate_hd_w .tag_w_ .tag_n {
+  display: inline-block;
+  border-radius: 10rpx;
+  padding: 0 10rpx;
+  margin-left: 5rpx;
+  background-color: #000;
+  color: #fff;
+  font-family: WeChatSansSS;
+  font-size: 30rpx;
+}
+.categories_w .cate_hd_w .text_w {
+  flex: 1;
+  padding-left: 36rpx;
+}
+.categories_w .cate_hd_w .text_w .t1 {
+  font-weight: 550;
+  font-size: 45rpx;
+}
+.categories_w .cate_hd_w .text_w .t2 {
+  font-size: 28rpx;
+  color: #888;
+}
+.categories_w .cate_hd_w .img_w_open {
+  margin: 40rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 40rpx;
+  overflow: hidden;
+}
+.content_w_cate .cate_i_w {
+  width: 100%;
+}
+.content_w_cate .cate_i_w .catee {
+  position: relative;
+  margin: 20rpx 0;
+  display: flex;
+  background-color: #fff;
+}
+.content_w_cate .cate_i_w .catee .date_w {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 10rpx;
+  padding: 0 10rpx;
+  margin: 12rpx;
+  background-color: #000;
+  color: #fff;
+  font-size: 24rpx;
+}
+.content_w_cate .cate_i_w .catee .cate_cover_w {
+  flex: 2;
+  padding: 20rpx;
+}
+.content_w_cate .cate_i_w .catee .cate_cover_w image {
+  width: 100%;
+  border-radius: 20rpx;
+}
+.content_w_cate .cate_i_w .catee .r_deri {
+  flex: 5;
+  padding: 20rpx;
+}
+.content_w_cate .cate_i_w .catee .r_deri .r_title {
+  font-size: 30rpx;
+  font-weight: 500;
+}
+.remind_w {
+  text-align: center;
+  font-size: 26rpx;
+  margin: 40rpx;
+  color: #999;
+}

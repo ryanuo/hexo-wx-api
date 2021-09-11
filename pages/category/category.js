@@ -4,38 +4,62 @@
  * @Date: 2021-09-04 22:36:55
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-09-06 15:21:47
+ * @LastEditTime: 2021-09-11 20:19:59
  * @LastEditors: Harry
  */
 // pages/category/category.js
 const Api = require('../../utils/api.js');
 const wxRequest = require('../../utils/wxRequest.js')
+import config from '../../config/config.js'
+let ad = config.getAd
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    title: '',
+    dataList: [],
+    isAd: ad
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let {cateName} = options
-    if(cateName){
+    let { cateName } = options
+    if (cateName) {
       this.getcates(cateName)
     }
   },
   // 获取到某个分类的文章信息
-  getcates(options){
+  getcates(options) {
     wxRequest.getRequest(Api.getCateDetail(options))
-    .then(res=>{
-      if(res.statusCode==200){
-        console.log(res);
-      }
+      .then(res => {
+        if (res.statusCode == 200) {
+          console.log(res);
+          this.setData({
+            title: res.data.name,
+            dataList: res.data.postlist
+          })
+        }
+      })
+  },
+  // 图片加载失败
+  imgerror(e) {
+    let { index } = e.currentTarget.dataset
+    let dataList = this.data.dataList
+    dataList[index].cover = '../../static/images/default_404_img.png'
+    this.setData({
+      dataList
     })
+  },
+  // 页面的跳转
+  nav_page(e) {
+    let { slug } = e.currentTarget.dataset
+    wx.navigateTo({
+      url: '/pages/articles/articles?id=' + slug
+    });
   },
 
   /**

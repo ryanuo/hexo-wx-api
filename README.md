@@ -16,7 +16,7 @@
 </div>
 
 <div align="center">
-<img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210906211822.png" width="220"><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210907223503.png" width="220"><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210908205236.png" width="220"><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210908205352.png" width="220">
+<img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210906211822.png" width="150"><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210907223503.png" width="150"><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210908205236.png" width="150"><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210908205352.png" width="150">
 </div>
 
 ## 部署方法
@@ -58,8 +58,9 @@ restful_api:
   pages: false            # 额外的 Hexo 页面数据, 如 About
   swipers_list: []          # 生成指定的页面信息,做指定的轮播文章展示
   search_all:                  #  配置全局搜索
-    path: '/api/search.json'  
-    field: 'post'
+    enable: true
+    path: api/search.json  
+    field: post
     content: true
 ```
 
@@ -80,7 +81,10 @@ const LOGO = "../../static/images/logo-icon.png"; // 网站的logo图片
 //redirecttype 为 apppage 就是跳转本小程序的页面，url为本小程序的页面路径
 //'appid' 当redirecttype为miniapp时，这个值为其他微信小程序的appid，如果redirecttype为apppage，webpage时，这个值设置为空。
 //'extraData'当redirecttype为miniapp时，这个值为提交到其他微信小程序的参数，如果redirecttype为apppage，webpage时，这个值设置为空。
-
+const ISAD = {
+  "enable": false, // 是否开启，第一次使用时设为false.达到默认条件即可开启
+  "bannerId": 'adunit-c9dae21126085de9' // 自行申请id
+}; // 是否开启广告
 // 注意: 如果只是跳转微信小程序内部界面 无需修改以下内容
 const INDEXNAV = [{
     id: '1',

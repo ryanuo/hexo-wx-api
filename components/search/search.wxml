@@ -4,7 +4,7 @@
  * @Date: 2021-09-04 16:53:50
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-09-10 18:49:06
+ * @LastEditTime: 2021-09-11 19:18:28
  * @LastEditors: Harry
 -->
 <view class="hr_search_w" bindtap="clickS">
@@ -15,7 +15,6 @@
     <icon class="" type="search" size="23" color=""></icon>
   </view>
 </view>
-
 <!-- 点击之后弹出搜索框 -->
 <view class="page_mask" bindtap="clickS" style="display:{{classStyle?'block':'none'}}"></view>
 <view class="content_w {{classStyle?'show_search':'hide_search'}}">
@@ -24,7 +23,7 @@
   </view>
   <view class="search_res" wx:if="{{res_list.length!==0}}">
     <scroll-view class="res_l_w" scroll-x="false" scroll-y bindscroll="">
-      <view class="res_l_i" wx:for="{{res_list}}" wx:for-index="index" wx:for-item="item" wx:key="item">
+      <view class="res_l_i" wx:for="{{res_list}}" wx:for-index="index" wx:for-item="item" wx:key="item" data-slug="{{item.slug}}" bindtap="nav_page">
         <view class="title_w">
           <text class="t {{key==item1?'hightLight':''}}" wx:for="{{item.title}}" wx:for-index="index1" wx:for-item="item1" wx:key="item1">{{item1}}</text>
         </view>

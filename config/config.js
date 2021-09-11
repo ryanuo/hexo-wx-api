@@ -4,7 +4,7 @@
  * @Date: 2021-09-04 17:01:59
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-09-10 13:04:51
+ * @LastEditTime: 2021-09-11 20:06:49
  * @LastEditors: Harry
  */
 
@@ -22,7 +22,10 @@ const ARTICLE_AUTHOR_img = "../../static/images/author.jpg" // 文章作者的�
 //redirecttype 为 apppage 就是跳转本小程序的页面，url为本小程序的页面路径
 //'appid' 当redirecttype为miniapp时，这个值为其他微信小程序的appid，如果redirecttype为apppage，webpage时，这个值设置为空。
 //'extraData'当redirecttype为miniapp时，这个值为提交到其他微信小程序的参数，如果redirecttype为apppage，webpage时，这个值设置为空。
-
+const ISAD = {
+  "enable": true,
+  "bannerId":'adunit-c9dae21126085de9'
+};  // 是否开启广告
 
 const INDEXNAV = [{
     id: '1',
@@ -72,5 +75,6 @@ export default {
   getZanImageUrl: ZANIMAGEURL,
   getLogo: LOGO,
   getAuthorname: ARTICLE_AUTHOR_NAME,
-  getAuthorImg: ARTICLE_AUTHOR_img
+  getAuthorImg: ARTICLE_AUTHOR_img,
+  getAd: ISAD
 }

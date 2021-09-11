@@ -4,7 +4,7 @@
  * @Date: 2021-09-04 16:42:05
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-09-10 09:16:03
+ * @LastEditTime: 2021-09-11 20:16:32
  * @LastEditors: Harry
 -->
 
@@ -85,7 +85,7 @@
 
 	<!-- 文章列表 -->
 	<view tyle="display:{{showallDisplay}}">
-		<view wx:for="{{postsList}}" wx:for-item="item" wx:for-index="index" wx:key="item">
+		<view wx:for="{{postsList}}" wx:for-item="item" wx:for-index="index" wx:key="item" style="animation:zoomIn {{index/10<1?1+.1*index:1+.01*index}}s linear">
 			<view class="cent-div" index="{{index}}" id="{{item.id}}" bindtap="redictAppDetail" data-url="{{item.slug}}" style='opacity:{{index >= (page-1)*2?op:"1"}};transition:all {{index >= (page-1)*2?(index-(page-1)*2)*0.5+0.5:"0"}}s;'>
 				<view class="cent-dw">
 					<view class="cnet-img-w">
@@ -106,7 +106,11 @@
 					</view>
 				</view>
 			</view>
+			<view class="cent-div" wx:if="{{isAd.enable&&index%9==0}}">
+  				<ad style="transform: none" unit-id="{{isAd.bannerId}}" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
+			</view>
 		</view>
+
 		<!-- <template is="tempCommonList" data="{{postsList:postsList,listAdsuccess:listAdsuccess}}" /> -->
 		<view style='display:{{isLoading?"block":"none"}}'>
 			<template is="tempLoading" />

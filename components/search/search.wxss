@@ -4,7 +4,7 @@
  * @Date: 2021-09-04 16:53:50
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-09-10 19:02:30
+ * @LastEditTime: 2021-09-11 16:13:38
  * @LastEditors: Harry
  */
 .hr_search_w {
@@ -111,6 +111,14 @@
 }
 .search_res .res_l_w .res_l_i .t {
   word-break: break-all;
+}
+.search_res .res_l_w .res_l_i .cont_w {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  margin: 10rpx 0;
 }
 .footer_w {
   position: absolute;

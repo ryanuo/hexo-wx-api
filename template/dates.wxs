@@ -4,7 +4,7 @@
  * @Date: 2021-09-05 13:44:18
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-09-05 14:50:13
+ * @LastEditTime: 2021-09-11 19:13:07
  * @LastEditors: Harry
  */
 
@@ -25,6 +25,11 @@ var change = function (value) {
   second = second < 10 ? "0" + second : second;
   return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
 }
+
+var slice = function(value){
+  return value.split('T')[0]
+}
 module.exports = {
-  timeChange: change
+  timeChange: change,
+  slice:slice
 }
