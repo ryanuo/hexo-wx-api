@@ -19,7 +19,7 @@
 <img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210906211822.png" width="150"><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210907223503.png" width="150"><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210908205236.png" width="150"><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210908205352.png" width="150">
 </div>
 
-## 部署方法
+## HEXO部署方法
 
 ```html
 npm install hexo-generator-wxapi --save
@@ -64,7 +64,13 @@ restful_api:
     content: true
 ```
 
-## 部署成功
+## 小程序配置
+
+* 拉取代码, 将文件导入到微信开发者工具中
+
+```npm
+git clone https://github.com/Rr210/hexo-wx-api
+```
 
 * 配置微信小程序
 * 找到config文件下的`config.js`进行配置, 如下
