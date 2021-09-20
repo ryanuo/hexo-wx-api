@@ -4,14 +4,13 @@
  * @Date: 2021-09-04 22:36:55
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-09-11 20:19:59
+ * @LastEditTime: 2021-09-20 08:56:55
  * @LastEditors: Harry
  */
 // pages/category/category.js
-const Api = require('../../utils/api.js');
-const wxRequest = require('../../utils/wxRequest.js')
-import config from '../../config/config.js'
-let ad = config.getAd
+const appInst = getApp();
+const { config, Api, wxRequest } = appInst.globalData
+let { getAd:ad } = config
 Page({
 
   /**
@@ -37,7 +36,7 @@ Page({
     wxRequest.getRequest(Api.getCateDetail(options))
       .then(res => {
         if (res.statusCode == 200) {
-          console.log(res);
+          // console.log(res);
           this.setData({
             title: res.data.name,
             dataList: res.data.postlist

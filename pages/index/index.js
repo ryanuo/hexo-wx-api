@@ -1,12 +1,11 @@
 
-const Api = require('../../utils/api.js');
-const wxRequest = require('../../utils/wxRequest.js')
-import config from '../../config/config.js'
-var webSiteName = config.getWebsiteName;
+// const Api = require('../../utils/api.js');
+// const wxRequest = require('../../utils/wxRequest.js')
+// import config from '../../config/config.js'
+const appInst = getApp();
+const { config, Api, wxRequest } = appInst.globalData
+let { webSiteName, getIndexNav:topNav, getAd:ad } = config;
 // var domain = config.getDomain;
-let topNav = config.getIndexNav;
-let ad = config.getAd
-
 Page({
   data: {
     postsList: [],  // 文章列表
@@ -44,10 +43,10 @@ Page({
     }
   },
   onShareTimeline() {
-  	return {
-  		title: `你必须非常努力,才能看起来毫不费力."---${webSiteName}"`,
-  		imageUrl: '../../static/images/logo-icon.png'
-  	}
+    return {
+      title: `你必须非常努力,才能看起来毫不费力."---${webSiteName}"`,
+      imageUrl: '../../static/images/logo-icon.png'
+    }
   },
   onPullDownRefresh: function () {
     let self = this;

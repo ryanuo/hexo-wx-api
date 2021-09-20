@@ -4,12 +4,12 @@
  * @Date: 2021-09-04 16:53:50
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-09-11 19:16:47
+ * @LastEditTime: 2021-09-20 08:52:42
  * @LastEditors: Harry
  */
 // components/search/search.js\
-const wxRequest = require('../../utils/wxRequest.js')
-const Api = require('../../utils/api.js');
+const appInst = getApp();
+const { Api, wxRequest } = appInst.globalData
 Component({
   /**
    * 组件的属性列表

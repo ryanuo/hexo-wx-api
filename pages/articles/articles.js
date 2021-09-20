@@ -1,7 +1,6 @@
 // pages/articles/articles.js
-const Api = require('../../utils/api.js');
-const wxRequest = require('../../utils/wxRequest.js')
-import config from '../../config/config.js'
+const appInst = getApp();
+const { config, Api, wxRequest } = appInst.globalData
 
 Page({
 

@@ -15,9 +15,14 @@
 <div>一起学习可好? 扫码关注, 了解更多!!</div>
 </div>
 
-<div align="center">
-<img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210906211822.png" width="150"><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210907223503.png" width="150"><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210908205236.png" width="150"><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210908205352.png" width="150">
-</div>
+<table>
+<tr>
+<td><center><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210906211822.png">图1  首页 </center></td>
+<td><center><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210907223503.png">图2 个人中心</center></td>
+<td><center><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210908205236.png">图2 文章页</center></td>
+<td><center><img src="https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/20210908205352.png">图2 本地搜索</center></td>
+</tr>
+</table>
 
 ## HEXO部署方法
 

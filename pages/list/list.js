@@ -1,6 +1,6 @@
 // pages/list/list.js
-const Api = require('../../utils/api.js');
-const wxRequest = require('../../utils/wxRequest.js')
+const appInst = getApp();
+const { Api, wxRequest } = appInst.globalData
 Page({
   /**
    * 页面的初始数据
