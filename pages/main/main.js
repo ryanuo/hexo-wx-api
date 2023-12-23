@@ -26,6 +26,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    const userInfo = wx.getStorageSync('userInfo')
+    if (userInfo) {
+      this.setData({
+        nickName: userInfo.nickName
+      })
+    }
   },
   onChooseAvatar(e) {
     if (!this.data.nickName) {
@@ -63,6 +69,9 @@ Page({
   },
   // 退出登录
   closeF() {
+    this.setData({
+      nickName: ''
+    })
     wx.clearStorage();
     wx.switchTab({
       url: '/pages/index/index',
