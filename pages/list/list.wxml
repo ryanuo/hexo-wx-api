@@ -1,12 +1,18 @@
 <view class="xx_w">
   <!-- 顶部的关于页面提示 -->
   <view class="about_cate" bindtap="remindModuel">
-    <image mode="widthFix" class="" src="../../static/images/about_cate.png" ></image>
+    <image mode="widthFix" class="" src="../../static/images/about_cate.png"></image>
   </view>
   <!-- 提示弹窗 -->
   <view class="remind_w" wx:if="{{isabout}}">
     <view class="tit_r">关于页面</view>
-    <view class="con_r">双模式显示,可以<text>点击头像</text>,展示所有的类别,也可以<text>点击星球</text>跳转到指定的分类文章页!</view>
+    <view class="con_r">
+      双模式显示,可以
+      <text>点击头像</text>
+      ,展示所有的类别,也可以
+      <text>点击星球</text>
+      跳转到指定的分类文章页!
+    </view>
     <view class="canel_btn" bindtap="remindModuel">关闭</view>
   </view>
   <!-- 展示全部的列表分类/ -->
@@ -16,22 +22,29 @@
       <view class="list_item_a">{{item.count}}</view>
     </view>
   </scroll-view>
-    <view class="canel_btn1" bindtap="clickImg"wx:if="{{isclickimg}}"></view>
+  <view class="canel_btn1" bindtap="clickImg" wx:if="{{isclickimg}}"></view>
   <!-- 主要星球设计 -->
   <view class="xx_1">
     <view class="mid_2" bindtap="clickImg">
       <view class="mid_1">
-        <open-data class="" type="userAvatarUrl"></open-data>
+        <image mode="widthFix" class="" src="{{!avatarUrl?'../../static/images/gravatar.png':avatarUrl}}"></image>
       </view>
     </view>
     <view class="other_w" wx:for="{{currentList}}" wx:for-index="index" wx:for-item="item" wx:key="item" style="width:{{300+index*padd+'rpx'}};height:{{300+index*padd+'rpx'}};animation:{{'planet-rotate '+ (speed+index*2)+'s '+ 'linear ' +((-1)+index*(-roratedelay))+'s '+'infinite'}};z-index:{{pageCount-index-1}}">
-      <view data-name="{{item.name}}" bindtap="navTo" class="ball" style="width:{{ballsize+index*5+'rpx'}};height:{{ballsize+index*5+'rpx'}};top:{{20+'rpx'}};left:{{numc+index*30+'rpx'}};animation:{{'self-rotate '+ (speed+index*2)+'s '+ 'linear ' +((-1)+index*(-roratedelay))+'s '+'infinite'}}">{{item.name}}<text class="fonts">{{item.count}}</text></view>
+      <view data-name="{{item.name}}" bindtap="navTo" class="ball" style="width:{{ballsize+index*5+'rpx'}};height:{{ballsize+index*5+'rpx'}};top:{{20+'rpx'}};left:{{numc+index*30+'rpx'}};animation:{{'self-rotate '+ (speed+index*2)+'s '+ 'linear ' +((-1)+index*(-roratedelay))+'s '+'infinite'}}">
+        {{item.name}}
+        <text class="fonts">{{item.count}}</text>
+      </view>
     </view>
   </view>
   <view class="xx_2">
-    <view class="item_2" bindtap="pre">上一页</view>
-    <view class="item_2_1 fonts">当前页数{{page+'/'+pageCount}}</view>
-    <view class="item_2" bindtap="next">下一页</view>
+    <view class="item_2" bindtap="pre">
+      <van-icon name="arrow-left" />
     </view>
+    <view class="item_2_1 fonts">{{page+'/'+pageCount}}</view>
+    <view class="item_2" bindtap="next">
+      <van-icon name="arrow" />
+    </view>
+  </view>
   <view class="xx_3"></view>
 </view>

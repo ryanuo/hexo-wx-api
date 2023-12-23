@@ -1,41 +1,39 @@
-<!--
- * @Description: 分类列表页信息
+<!-- * @Description: 分类列表页信息
  * @Author: Harry
  * @Date: 2021-09-04 22:36:55
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
  * @LastEditTime: 2021-09-11 20:23:08
- * @LastEditors: Harry
--->
+ * @LastEditors: Harry -->
 <wxs src="../../template/dates.wxs" module="tools"></wxs>
 <view class="categories_w">
   <view class="cate_hd_w">
     <view class="tag_w_">
-    <view class="tag_w">类别</view>
-    <view class="tag_n">{{dataList.length+"篇"}}</view>
+      <view class="tag_w">类别</view>
+      <view class="tag_n">{{dataList.length+"篇"}}</view>
     </view>
     <view class="text_w">
       <view class="t1">{{title}}</view>
       <view class="t2">海纳百川，厚积薄发</view>
     </view>
     <view class="img_w_open">
-      <open-data class="" type="userAvatarUrl"></open-data>
+      <image mode="widthFix" class="" src="{{!avatarUrl?'../../static/images/gravatar.png':avatarUrl}}"></image>
     </view>
   </view>
   <view class="content_w_cate">
     <view class="cate_i_w" bindtap="nav_page" data-slug="{{item.slug}}" wx:for="{{dataList}}" wx:for-index="index" wx:for-item="item" wx:key="item" style="animation:zoomIn {{index*.15}}s linear">
       <view class="catee">
-              <view class="date_w">{{tools.slice(item.date)}}</view>
-      <view class="cate_cover_w">
-        <image binderror="imgerror" data-index="{{index}}" class="" src="{{item.cover}}" mode="widthFix"></image>
-      </view>
-      <view class="r_deri">
-        <view class="r_title">{{item.title}}</view>
-      </view>
+        <view class="date_w">{{tools.slice(item.date)}}</view>
+        <view class="cate_cover_w">
+          <image binderror="imgerror" data-index="{{index}}" class="" src="{{item.cover}}" mode="widthFix"></image>
+        </view>
+        <view class="r_deri">
+          <view class="r_title">{{item.title}}</view>
+        </view>
       </view>
       <view class="" wx:if="{{isAd.enable&&index%9==0}}">
-  			<ad style="" unit-id="{{isAd.bannerId}}" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
-			</view>
+        <ad style="" unit-id="{{isAd.bannerId}}" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
+      </view>
     </view>
     <view class="remind_w">没有更多数据了</view>
   </view>

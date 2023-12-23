@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "dayjs": "^1.11.10",
+    "vant-weapp": "^1.0.0-beta.4"
+  }
+}

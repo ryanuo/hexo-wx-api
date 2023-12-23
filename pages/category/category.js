@@ -10,7 +10,7 @@
 // pages/category/category.js
 const appInst = getApp();
 const { config, Api, wxRequest } = appInst.globalData
-let { getAd:ad } = config
+let { getAd: ad } = config
 Page({
 
   /**
@@ -19,16 +19,23 @@ Page({
   data: {
     title: '',
     dataList: [],
-    isAd: ad
+    isAd: ad,
+    avatarUrl: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     let { cateName } = options
     if (cateName) {
       this.getcates(cateName)
+    }
+    const userInfo = wx.getStorageSync('userInfo')
+    if (userInfo) {
+      this.setData({
+        avatarUrl: userInfo.avatarUrl
+      })
     }
   },
   // 获取到某个分类的文章信息
@@ -64,49 +71,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

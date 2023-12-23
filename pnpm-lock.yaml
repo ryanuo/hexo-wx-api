@@ -1,0 +1,23 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  dayjs:
+    specifier: ^1.11.10
+    version: 1.11.10
+  vant-weapp:
+    specifier: ^1.0.0-beta.4
+    version: 1.0.0-beta.4
+
+packages:
+
+  /dayjs@1.11.10:
+    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
+    dev: false
+
+  /vant-weapp@1.0.0-beta.4:
+    resolution: {integrity: sha512-oZZ4MUgrgMMeB40cJkREmPM2Ad/ZmJaqAn4/xP1jjpXIQi/ds0ir4ige0nwIXL+3uUD4ARnq9tHy4Ds0K1iwFg==}
+    dev: false

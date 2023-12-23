@@ -1,31 +1,47 @@
-<wxs src="../../template/dates.wxs" module="tools"></wxs>
+<wxs src="../../template/dates.wxs" module="dayjsModule"></wxs>
 <block wx:if="{{isLoding}}">
   <view class="articles_wrap">
-  <view class="hd_wrap">
-    <view class="title_w">{{htmlText.title}}</view>
-    <view class="ic">
-          <view class="img_a">
-      <image class="" src="{{author_d.img}}" mode="widthFix"></image>
-    </view>
-    <view class="author_w">
-      <view class="author_t"><text class="tag">博主</text>{{author_d.name}}</view>
-      <view class="date_w">{{tools.timeChange(htmlText.date)}}
-        <block wx:if="{{htmlText.categories.length!==0}}">
-          <text class="cates_i" wx:for="{{htmlText.categories}}" wx:for-index="index" wx:for-item="item" wx:key="item">{{item.name}}</text>
-        </block>
+    <view class="hd_wrap">
+      <view class="title_w">{{htmlText.title}}</view>
+      <view class="ic">
+        <view class="img_a">
+          <image class="" src="{{author_d.img}}" mode="widthFix"></image>
+        </view>
+        <view class="author_w">
+          <view class="author_t">
+            <text class="tag">博主</text>
+            {{author_d.name}}
+          </view>
+          <view class="date_w">
+            {{dayjsModule.formatDateTime(htmlText.date)}}
+            <block wx:if="{{htmlText.categories.length!==0}}">
+              <text class="cates_i" wx:for="{{htmlText.categories}}" wx:for-index="index" wx:for-item="item" wx:key="item">
+                {{item.name}}
+              </text>
+            </block>
+          </view>
+        </view>
       </view>
     </view>
+    <mp-html content="{{htmlText.content}}" preview-img />
+    <view class="footer_copyright">
+      <view class="item_f">
+        <text>文章作者:</text>
+        {{author_d.name}}
+      </view>
+      <view class="item_f">
+        <text>文章链接:</text>
+        <text class="nav_a" bindtap="Nav_a" data-con="1">{{"https://"+author_d.domain}}</text>
+      </view>
+      <view class="item_f">
+        <text>版权声明:</text>
+        本博客所有文章除特别声明外，均采用
+        <text class="nav_a" bindtap="Nav_a" data-con="2">CC BY-NC-SA 4.0</text>
+        许可协议。转载请注明来自{{author_d.webname}}
+      </view>
     </view>
   </view>
-<mp-html content="{{htmlText.content}}" preview-img />
-<view class="footer_copyright">
-  <view class="item_f"><text>文章作者:</text>{{author_d.name}}</view>
-  <view class="item_f"><text>文章链接:</text><text class="nav_a" bindtap="Nav_a" data-con="1">{{"https://"+author_d.domain}}</text></view>
-  <view class="item_f"><text>版权声明:</text>本博客所有文章除特别声明外，均采用 <text class="nav_a" bindtap="Nav_a" data-con="2">CC BY-NC-SA 4.0</text> 许可协议。转载请注明来自{{author_d.webname}}</view>
-</view>
-</view>
 </block>
 <block wx:else>
   <view class="loding_w"></view>
 </block>
-

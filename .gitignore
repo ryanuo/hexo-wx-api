@@ -1,2 +1,5 @@
 *.private.config.json
 *.less
+node_modules
+.vscode
+miniprogram_npm

@@ -8,6 +8,13 @@
     "pages/about/about",
     "pages/discuss/discuss"
   ],
+  "usingComponents": {
+    "van-search": "vant-weapp/search",
+    "van-tag": "vant-weapp/tag",
+    "van-divider": "vant-weapp/divider",
+    "van-notify": "vant-weapp/notify",
+    "van-icon": "vant-weapp/icon"
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
@@ -46,6 +53,5 @@
       }
     ]
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

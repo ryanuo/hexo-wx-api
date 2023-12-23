@@ -1,41 +1,25 @@
-<!--
- * @Description: 搜索组件
- * @Author: Harry
- * @Date: 2021-09-04 16:53:50
- * @Url: https://u.mr90.top
- * @github: https://github.com/rr210
- * @LastEditTime: 2021-09-11 19:18:28
- * @LastEditors: Harry
--->
-<view class="hr_search_w" bindtap="clickS">
-  <view class="input_w">
-    <view class="input_s_i">搜索文章</view>
-  </view>
-  <view class="icon_w">
-    <icon class="" type="search" size="23" color=""></icon>
-  </view>
-</view>
-<!-- 点击之后弹出搜索框 -->
-<view class="page_mask" bindtap="clickS" style="display:{{classStyle?'block':'none'}}"></view>
-<view class="content_w {{classStyle?'show_search':'hide_search'}}">
-  <view class="search_hd">
-    <input bindinput="search_key" class="searching" placeholder="这里搜索" type="text" always-embed />
-  </view>
-  <view class="search_res" wx:if="{{res_list.length!==0}}">
-    <scroll-view class="res_l_w" scroll-x="false" scroll-y bindscroll="">
-      <view class="res_l_i" wx:for="{{res_list}}" wx:for-index="index" wx:for-item="item" wx:key="item" data-slug="{{item.slug}}" bindtap="nav_page">
-        <view class="title_w">
-          <text class="t {{key==item1?'hightLight':''}}" wx:for="{{item.title}}" wx:for-index="index1" wx:for-item="item1" wx:key="item1">{{item1}}</text>
-        </view>
-        <view class="cont_w">
-          <text class="t {{key==item2?'hightLight':'nohightLight'}}" wx:for="{{item.content}}" wx:for-index="index2" wx:for-item="item2" wx:key="item2">{{item2}}</text>
-        </view>
+<van-search value="{{ key }}" bind:change="onSearchkey" placeholder="请输入搜索关键词" />
+<view class="search_res" wx:if="{{res_list.length!==0}}">
+  <scroll-view class="res_l_w" scroll-x="false" scroll-y bindscroll="">
+    <view class="res_l_i" wx:for="{{res_list}}" wx:for-index="index" wx:for-item="item" wx:key="item" data-slug="{{item.slug}}" bindtap="nav_page">
+      <view class="title_w">
+        <span class="t {{key==item1?'hightLight':''}}" wx:for="{{item.title}}" wx:for-index="index1" wx:for-item="item1" wx:key="item1">
+          {{item1}}
+        </span>
       </view>
-    </scroll-view>
-  </view>
-  <block wx:if="{{res_list.length==0}}">
-    <image class="img_no_res" style="width:200rpx;margin:0 auto;display:block" src="../../static/images/no-res.png" mode="widthFix"></image>
-      <view class="" style="text-align:center;color:#888;font-size:24rpx">暂时没有搜索到</view>
-  </block>
-  <view class="footer_w" bindtap="Nav_a" data-con="1">©2021-Harry</view>
+      <view class="cont_w">
+        <span class="t {{key==item2?'hightLight':'nohightLight'}}" wx:for="{{item.content}}" wx:for-index="index2" wx:for-item="item2" wx:key="item2">
+          {{item2}}
+        </span>
+      </view>
+      <van-tag class="tag-b" color="#ffe1e1" text-color="#ad0000">{{item.slug}}</van-tag>
+    </view>
+  </scroll-view>
 </view>
+<block wx:if="{{res_list.length==0}}">
+  <view class="container">
+    <image class="img_no_res" src="../../static/images/no-res.png" mode="widthFix"></image>
+    <view class="message">暂时没有搜索到</view>
+  </view>
+</block>
+<!-- <view class="footer_w" bindtap="Nav_a" data-con="1">©2021-Harry</view> -->
