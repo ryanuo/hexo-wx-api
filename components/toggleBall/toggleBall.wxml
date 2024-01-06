@@ -1,0 +1,4 @@
+<!-- components/toggleBall/toggleBall.wxml -->
+<van-button type="primary" size="mini" bindtap="toggleBall">
+  切换星球{{type==='old'?'（旧版）':'（新版）'}}
+</van-button>

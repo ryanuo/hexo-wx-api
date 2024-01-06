@@ -1,3 +1,4 @@
+<toggleBall />
 <view class="xx_w">
   <!-- 顶部的关于页面提示 -->
   <view class="about_cate" bindtap="remindModuel">

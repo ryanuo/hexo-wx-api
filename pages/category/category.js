@@ -20,7 +20,8 @@ Page({
     title: '',
     dataList: [],
     isAd: ad,
-    avatarUrl: ''
+    avatarUrl: '',
+    skeletonVisibleMap: {}
   },
 
   /**
@@ -43,10 +44,14 @@ Page({
     wxRequest.getRequest(Api.getCateDetail(options))
       .then(res => {
         if (res.statusCode == 200) {
-          // console.log(res);
+          const skeletonVisibleMap = this.data.skeletonVisibleMap
+          res.data.postlist.forEach(item => {
+            skeletonVisibleMap[item.slug] = true
+          });
           this.setData({
             title: res.data.name,
-            dataList: res.data.postlist
+            dataList: res.data.postlist,
+            skeletonVisibleMap
           })
         }
       })
@@ -58,6 +63,14 @@ Page({
     dataList[index].cover = '../../static/images/default_404_img.png'
     this.setData({
       dataList
+    })
+  },
+  imgload(e) {
+    let { slug } = e.currentTarget.dataset
+    const skeletonVisibleMap = this.data.skeletonVisibleMap
+    skeletonVisibleMap[slug] = false
+    this.setData({
+      skeletonVisibleMap
     })
   },
   // 页面的跳转

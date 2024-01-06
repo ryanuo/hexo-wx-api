@@ -16,6 +16,24 @@
     </view>
   </scroll-view>
 </view>
+<view class="search_history" wx:if="{{history_list.length!==0}}">
+  <!-- 标题 -->
+  <view class="title">历史搜索</view>
+  <!-- 历史记录列表 -->
+  <view class="history_list">
+    <view class="history_item" wx:for="{{history_list}}" wx:for-index="index" wx:for-item="item" wx:key="item">
+      <!-- 历史记录内容 -->
+      <view class="history_content" bindtap="search_key" data-key="{{item}}">{{item}}</view>
+    </view>
+  </view>
+  <!-- 清空全部按钮 -->
+  <view class="clear_all_button">
+    <view class="clear_wrap" bindtap="clearAllHistory">
+      <van-icon name="delete" />
+      <span>清空全部</span>
+    </view>
+  </view>
+</view>
 <block wx:if="{{res_list.length==0}}">
   <view class="container">
     <image class="img_no_res" src="../../static/images/no-res.png" mode="widthFix"></image>

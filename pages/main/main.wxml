@@ -72,7 +72,12 @@
         <input type="nickname" class="weui-input" :value="nickName" bind:change="onInputUsername" name="nickname" placeholder="请输入昵称" />
       </view>
     </form>
-    <button class="login-bt" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">确定</button>
+    <view class="login-bt3" wx:if="{{!nickName}}">
+      <van-button block disabled type="danger" size="small">先输入昵称！</van-button>
+    </view>
+    <button wx:else class="login-bt" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+      确定
+    </button>
     <button class="login-bt2" bindtap="closeLoginPopup">取消</button>
   </view>
 </block>

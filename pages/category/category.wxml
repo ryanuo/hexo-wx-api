@@ -25,7 +25,9 @@
       <view class="catee">
         <view class="date_w">{{tools.slice(item.date)}}</view>
         <view class="cate_cover_w">
-          <image binderror="imgerror" data-index="{{index}}" class="" src="{{item.cover}}" mode="widthFix"></image>
+          <van-skeleton loading="{{ skeletonVisibleMap[item.slug] }}">
+            <image data-slug="{{item.slug}}" bindload="imgload" binderror="imgerror" data-index="{{index}}" class="" src="{{item.cover}}" mode="widthFix" />
+          </van-skeleton>
         </view>
         <view class="r_deri">
           <view class="r_title">{{item.title}}</view>

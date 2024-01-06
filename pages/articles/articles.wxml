@@ -9,15 +9,15 @@
         </view>
         <view class="author_w">
           <view class="author_t">
-            <text class="tag">博主</text>
+            <van-tag color="var(--articeTag)" text-color="var(--articleThemeColor)">博主</van-tag>
             {{author_d.name}}
           </view>
           <view class="date_w">
             {{dayjsModule.formatDateTime(htmlText.date)}}
             <block wx:if="{{htmlText.categories.length!==0}}">
-              <text class="cates_i" wx:for="{{htmlText.categories}}" wx:for-index="index" wx:for-item="item" wx:key="item">
+              <van-tag wx:for="{{htmlText.categories}}" class="cates_i" color="var(--articeTag)" text-color="var(--articleThemeColor)" wx:for-item="item" wx:key="item">
                 {{item.name}}
-              </text>
+              </van-tag>
             </block>
           </view>
         </view>

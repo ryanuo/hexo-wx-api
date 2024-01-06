@@ -25,12 +25,19 @@ Component({
     classStyle: false,
     allData: [],
     res_list: [],
-    key: ''
+    key: '',
+    history_list: []
   },
   // 进入页面就开始本地的请求
   lifetimes: {
     // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
     attached: function() {
+      console.log(1)
+      if (wx.getStorageSync('history_list')) {
+        this.setData({
+          history_list: wx.getStorageSync('history_list')
+        })
+      }
       this.getJsonData()
     }
   },
@@ -102,12 +109,44 @@ Component({
           })
         })
     },
+    search_key(e) {
+      let value = e.currentTarget.dataset.key;
+      this.onSearchkey({ detail: value })
+    },
     // 页面的跳转
     nav_page(e) {
+      // 将当前历史搜索设置到历史列表，并且判断如果存在就不设置，并且超过20条就删除最早一条
+      let { key } = this.data;
+      if (this.data.history_list.indexOf(key) === -1) {
+        if (this.data.history_list.length >= 20) {
+          this.data.history_list.shift();
+        }
+        this.data.history_list.push(key);
+        this.setData({
+          history_list: this.data.history_list
+        });
+        wx.setStorageSync('history_list', this.data.history_list);
+      }
+
       let { slug } = e.currentTarget.dataset
       wx.navigateTo({
         url: '/pages/articles/articles?id=' + slug
       });
-    }
+    },
+    // 清空历史记录，清空本地的历史记录
+    clearAllHistory() {
+      wx.showModal({
+        title: '提示',
+        content: '确定要清空历史记录吗？',
+        success: (res) => {
+          if (res.confirm) {
+            this.setData({
+              history_list: []
+            });
+            wx.setStorageSync('history_list', this.data.history_list);
+          }
+        }
+      });
+    },
   },
 })

@@ -1,57 +1,59 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/main/main",
-    "pages/articles/articles",
-    "pages/list/list",
-    "pages/category/category",
-    "pages/about/about",
-    "pages/discuss/discuss"
-  ],
-  "usingComponents": {
-    "van-search": "vant-weapp/search",
-    "van-tag": "vant-weapp/tag",
-    "van-divider": "vant-weapp/divider",
-    "van-notify": "vant-weapp/notify",
-    "van-icon": "vant-weapp/icon"
-  },
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "今日在学",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#959595",
-    "selectedColor": "#3F91F0",
-    "borderStyle": "white",
-    "backgroundColor": "#ffffff",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "static/icon/tabar/home.png",
-        "selectedIconPath": "static/icon/tabar/home_h.png",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/list/list",
-        "iconPath": "static/icon/tabar/list.png",
-        "selectedIconPath": "static/icon/tabar/list1.png",
-        "text": "列表"
-      },
-      {
-        "pagePath": "pages/discuss/discuss",
-        "iconPath": "static/icon/tabar/catelog.png",
-        "selectedIconPath": "static/icon/tabar/catelog_h.png",
-        "text": "排行"
-      },
-      {
-        "pagePath": "pages/main/main",
-        "iconPath": "static/icon/tabar/my.png",
-        "selectedIconPath": "static/icon/tabar/my_h.png",
-        "text": "我的"
-      }
-    ]
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/index/index",
+        "pages/main/main",
+        "pages/articles/articles",
+        "pages/list/list",
+        "pages/category/category",
+        "pages/about/about",
+        "pages/discuss/discuss",
+        "pages/ball/ball"
+    ],
+    "usingComponents": {
+        "van-search": "vant-weapp/search",
+        "van-tag": "vant-weapp/tag",
+        "van-divider": "vant-weapp/divider",
+        "van-notify": "vant-weapp/notify",
+        "van-icon": "vant-weapp/icon",
+        "van-button": "vant-weapp/button"
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "今日在学",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#959595",
+        "selectedColor": "#3F91F0",
+        "borderStyle": "white",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "static/icon/tabar/home.png",
+                "selectedIconPath": "static/icon/tabar/home_h.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/ball/ball",
+                "iconPath": "static/icon/tabar/list.png",
+                "selectedIconPath": "static/icon/tabar/list1.png",
+                "text": "列表"
+            },
+            {
+                "pagePath": "pages/discuss/discuss",
+                "iconPath": "static/icon/tabar/catelog.png",
+                "selectedIconPath": "static/icon/tabar/catelog_h.png",
+                "text": "排行"
+            },
+            {
+                "pagePath": "pages/main/main",
+                "iconPath": "static/icon/tabar/my.png",
+                "selectedIconPath": "static/icon/tabar/my_h.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
 }

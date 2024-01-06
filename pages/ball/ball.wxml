@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="wrapper" hidden="{{tagState}}" bindtouchmove="handletouchmove" bindtouchstart="handletouchstart">
+    <view wx:for="{{tagEle}}" wx:key="{{key}}" bindtap="navTo" wx:index="{{index}}" data-name="{{item.name}}" id="tag{{index}}" style="opacity:{{item.opacity}};top: {{item.top}};left: {{item.left}}; z-index: {{item.zIndex}};font-size: {{item.fontSize}}">
+      {{item.name}}
+    </view>
+  </view>
+  <view class="mid_1">
+    <image mode="widthFix" class="" src="{{!avatarUrl?'../../static/images/gravatar.png':avatarUrl}}"></image>
+  </view>
+</view>
+<toggleBall type="old" />
+<!-- <view class="stepper">
+  <van-stepper value="{{ radius }}" min="150" max="220" bind:change="onStepChange" />
+</view> -->

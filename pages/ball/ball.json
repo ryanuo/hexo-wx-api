@@ -1,6 +1,6 @@
 {
   "usingComponents": {
+    "van-stepper": "vant-weapp/stepper",
     "toggleBall": "../../components/toggleBall/toggleBall"
-  },
-  "navigationBarTitleText": "列表星球"
+  }
 }
