@@ -103,7 +103,8 @@
           </view>
         </view>
       </view>
-      <view class="cent-div" wx:if="{{isAd.enable&&index%9==0}}">
+      <view class="cent-div cent-ad" wx:if="{{isAd.enable&&index%9==0}}">
+        <ad style="transform: none" unit-id="{{isAd.bannerId}}" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
         <ad style="transform: none" unit-id="{{isAd.bannerId}}" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
       </view>
     </view>

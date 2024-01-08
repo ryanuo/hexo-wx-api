@@ -13,7 +13,17 @@ Page({
     delay: 300, // 延迟时间
     speed: 15,
     time: 50, // S
-    radius: 180
+    radius: 180,
+    randomImageUrl: 'https://cdn.jsdelivr.net/gh/Rr210/image@master/img/bg1.png'
+  },
+  // 生成随机图片地址的函数
+  generateRandomImageUrl: function() {
+    const randomNumber = this.getRandomNumber(1, 8);
+    return `https://cdn.jsdelivr.net/gh/Rr210/image@master/img/bg${randomNumber}.png`;
+  },
+  // 生成指定范围内的随机整数的函数
+  getRandomNumber: function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   },
   handletouchmove: function(event) {
     let currentX = event.touches[0].pageX // 获得X轴坐标
@@ -155,14 +165,25 @@ Page({
       this.initialize(res.data) // 调用标签云特效
     }
   },
+  onShow: function() {
+    const userInfo = wx.getStorageSync('userInfo')
+    this.setData({
+      avatarUrl: userInfo ? userInfo.avatarUrl : ''
+    })
+
+  },
   onLoad: function() {
     this.getData()
     const userInfo = wx.getStorageSync('userInfo')
-    if (userInfo) {
-      this.setData({
-        avatarUrl: userInfo.avatarUrl
-      })
-    }
+    this.setData({
+      avatarUrl: userInfo ? userInfo.avatarUrl : ''
+    })
+
+    const randomImageUrl = this.generateRandomImageUrl();
+    // 更新数据，将随机图片地址存储在页面数据中
+    this.setData({
+      randomImageUrl: randomImageUrl
+    });
   },
   navTo(e) {
     let { name } = e.currentTarget.dataset
