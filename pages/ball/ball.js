@@ -165,15 +165,7 @@ Page({
       this.initialize(res.data) // 调用标签云特效
     }
   },
-  onShow: function() {
-    const userInfo = wx.getStorageSync('userInfo')
-    this.setData({
-      avatarUrl: userInfo ? userInfo.avatarUrl : ''
-    })
-
-  },
-  onLoad: function() {
-    this.getData()
+  init: function() {
     const userInfo = wx.getStorageSync('userInfo')
     this.setData({
       avatarUrl: userInfo ? userInfo.avatarUrl : ''
@@ -184,6 +176,13 @@ Page({
     this.setData({
       randomImageUrl: randomImageUrl
     });
+  },
+  onShow: function() {
+    this.init()
+  },
+  onLoad: function() {
+    this.getData()
+    this.init()
   },
   navTo(e) {
     let { name } = e.currentTarget.dataset
